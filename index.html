@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link href="https://fonts.google.com/specimen/Kumbh+Sans" rel="stylesheet"> -->
+        <link rel="stylesheet" href="./dist/output.css">
+        <title>Ecommerce</title>
+    </head>
+
+    <body id="body" class="font-kumbh box-border pt-4 relative min-[906px]:px-8 min-[1440px]:px-[170px]">
+        <nav class="flex px-4 w-full justify-between  sm:pb-0 pb-4 align-middle">
+            <div class="flex">
+                <img src="./assets/images/icon-menu.svg" class="h-5 pr-2 sm:hidden" onclick="menu()">
+                <img src="./assets/images/logo.svg" class="h-5">
+                <ul class="sm:flex pl-8 gap-5 hidden">
+                    <li id="Collections" class="pb-5 border-cOrange border-b-4 border-solid "
+                        onclick="navBorder('Collections')">Collections</li>
+                    <li id="Men" class="pb-5 border-cOrange border-b-4 border-none" onclick="navBorder('Men')">Men</li>
+                    <li id="Women" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('Women')">
+                        Women</li>
+                    <li id="About" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('About')">
+                        About</li>
+                    <li id="Contact" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('Contact')">
+                        Contact</li>
+                </ul>
+            </div>
+            <div class="flex">
+                <div class="relative" onclick="openCart()">
+                    <img src="./assets/images/icon-cart.svg" class="h-5 min-[768px]:h-8 ">
+                    <span id="cartbadge"
+                        class="absolute top-n6 right-n4 bg-cOrange rounded-md text-center w-5 text-[9px] font-bold  hidden"></span>
+                </div>
+                <img id="profileimg" src="./assets/images/image-avatar.png"
+                    class="h-5 ml-4 max-[317px]:ml-0 min-[768px]:h-10 border-none border-cOrange border-2 rounded-full"
+                    onclick="profileborder()">
+            </div>
+            <div id="dropmenu" class="fixed bg-cWhite z-10 left-0 top-0 w-2/3 h-full p-6 font-bold hidden">
+                <img src="./assets/images/icon-close.svg" class="mb-8 " onclick="closeMenu()">
+                <ul>
+                    <li class="pb-2"> Collections </li>
+                    <li class="pb-2">Men </li>
+                    <li class="pb-2">Women </li>
+                    <li class="pb-2">About</li>
+                    <li> Contact</li>
+
+
+
+                </ul>
+            </div>
+            <div id="overlay" onclick="closeMenu()" class="w-1/3 right-0 top-0 fixed h-full bg-Overlay z-10 hidden">
+            </div>
+        </nav>
+        <div class="w-75 fixed top-16 bg-cWhite rounded-lg  right-2 max-[317px]:w-auto max-[317px]:right-0  z-30 hidden"
+            id="cart">
+            <div class="font-bold my-5  px-3">Cart</div>
+            <hr class="mb-3 mt-3">
+            <div class="text-cGrayishblue font-bold h-20 text-center  px-3 pt-5  " id="emptycart">
+                Your cart is empty.
+            </div>
+            <div id="cartlist" class="hidden  px-3">
+
+                <div class="flex h-14 justify-between max-[317px]:h-auto  mb-10 mt-8 ">
+                    <img src="./assets/images/image-product-1-thumbnail.jpg" class="h-11">
+                    <div class="">
+                        <span class="block">Fall Limited Edition Sneakers</span>
+                        <span class="" id="priceQuantity">
+                        </span>
+                        <span id="totalPrice" class="font-bold"></span>
+
+                    </div>
+                    <img src="./assets/images/icon-delete.svg" class="h-4 self-center" onclick="deleteFromCart()">
+                </div>
+                <button
+                    class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center mb-11">Checkout</button>
+            </div>
+            <!-- <div class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 sm:basis-[40%] sm:px-1">
+                <img src="./assets/images/icon-minus.svg" class="h-1 " onclick="downCount()">
+                <input id="counter" type="number" value="0" disabled
+                    class="bg-cLightgrayishblue text-center w-full font-bold">
+                <img src="./assets/images/icon-plus.svg" class="h-3 " onclick="upCount()">
+            </div> -->
+        </div>
+        <div id="cartOverlay" onclick="closeCart()" class="w-full right-0 top-0 fixed h-full bg-Overlay z-10 hidden">
+        </div>
+        <hr class="hidden sm:block mb-16">
+        <div class="sm:flex sm:gap-[6%] min-[1440px]:gap-[10%] sm:pl-[10%] sm:pr-[10%] min-[1440px]:px-11">
+
+            <hero class="relative sm:shrink-0 ">
+                <img id="display" src="./assets/images/image-product-1.jpg"
+                    class="sm:w-75 sm:rounded-xl min-[1440px]:w-[408px]">
+                <div class=" min-[1440px]:w-[408px] w-[305px] gap-[10px] hidden sm:flex sm:mt-3">
+                    <div class="relative">
+                        <img src="./assets/images/image-product-1-thumbnail.jpg" class=" rounded-xl"
+                            onclick="jumpTo(0)">
+                        <span id="thumb0Overlay"
+                            class="absolute  w-full h-full top-0 border-solid rounded-xl  bg-[#dddddd99]"></span>
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-2-thumbnail.jpg" class=" rounded-xl"
+                            onclick="jumpTo(1)">
+                        <span id="thumb1Overlay"
+                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden  bg-[#dddddd99]"></span>
+
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-3-thumbnail.jpg" class=" rounded-xl"
+                            onclick="jumpTo(2)">
+                        <span id="thumb2Overlay"
+                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden bg-[#dddddd99]"></span>
+
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-4-thumbnail.jpg" class=" rounded-xl"
+                            onclick="jumpTo(3)">
+                        <span id="thumb3Overlay"
+                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden  bg-[#dddddd99]"></span>
+
+                    </div>
+
+                </div>
+                <div class="flex w-full justify-between absolute top-1/2 px-4 sm:hidden">
+                    <img src="./assets/images/icon-previous.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
+                        onclick="prevDisplay()">
+                    <img src="./assets/images/icon-next.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
+                        onclick="nextDisplay()">
+
+                </div>
+            </hero>
+
+            <section class="px-4 pt-10">
+
+                <span class="block text-cOrange uppercase font-bold pb-3"> Sneaker Company</span>
+                <span
+                    class="block font-bold text-2xl min-[894px]:text-3xl min-[894px]:leading-none min-[1440px]:pb-9 min-[1440px]:text-4xl">
+                    Fall Limited Edition Sneakers</span>
+                <span class="block text-cDarkgrayishblue text-sm pb-4 min-[1440px]:text-base">
+                    These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer
+                    sole, they'll withstand everything the weather can offer.
+
+                </span>
+                <div class="relative items-center pb-4 flex sm:block">
+                    <div>
+                        <span class="font-extrabold text-2xl mr-2">
+                            $125.00
+                        </span>
+                        <span class="bg-cPaleorange text-cOrange rounded-lg px-2 font-bold">50%</span>
+                    </div>
+                    <span class="sm:block right-0 absolute text-cDarkgrayishblue font-bold sm:relative sm:pt-2"> <del>
+                            $250.00 </del></span>
+                </div>
+                <div class="sm:flex sm:gap-2">
+                    <div
+                        class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 sm:basis-[40%] sm:px-1">
+                        <img src="./assets/images/icon-minus.svg" class="h-1 " onclick="downCount()">
+                        <input id="counter" type="number" value="0" disabled
+                            class="bg-cLightgrayishblue text-center w-full font-bold">
+                        <img src="./assets/images/icon-plus.svg" class="h-3 " onclick="upCount()">
+                    </div>
+                    <button
+                        class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center shadow-2xl shadow-cPaleorange mb-6 sm:p-0"
+                        onclick="addTocart()">
+                        <div class="flex">
+                            <img src="./assets/images/icon-cart.svg" class="pr-3"> Add to cart
+                        </div>
+                    </button>
+                </div>
+                <!-- <footer class="absolute left-0 right-0 bg-cOrange">
+                    Challenge by Frontend Mentor.
+                    <br>
+                    Coded by <b>Odeh</b>.
+                </footer> -->
+            </section>
+
+
+        </div>
+        <section id="lightbox" class="w-full right-0 top-0 left-0 bottom-0 fixed h-full flex justify-center">
+            <span class="w-full right-0 top-0 left-0 bottom-0 fixed h-full bg-Overlay  flex justify-center z-20"
+                onclick="exitLightbox()"></span>
+            <div class="flex flex-col items-center mt-20 relative z-30 h-fit">
+                <img src="./assets/images/icon-close.svg" class="self-end">
+                <img id="lightboxmain" src="./assets/images/image-product-1.jpg"
+                    class="h-64 rounded-xl min-[1024px]:h-[340px]">
+                <div class="flex gap-3 mt-3">
+                    <div class="relative">
+                        <img src="./assets/images/image-product-1-thumbnail.jpg"
+                            class="h-12 min-[1024px]:h-[76px]  rounded-md">
+                        <span id="thumbnail1"
+                            class="absolute  w-full h-full top-0 border-solid rounded-md  bg-[#dddddd99]"></span>
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-2-thumbnail.jpg"
+                            class="h-12  min-[1024px]:h-[76px] rounded-md">
+                        <span id="thumbnail2"
+                            class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-3-thumbnail.jpg"
+                            class="h-12 min-[1024px]:h-[76px]  rounded-md">
+                        <span id="thumbnail3"
+                            class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
+                    </div>
+                    <div class="relative">
+                        <img src="./assets/images/image-product-4-thumbnail.jpg"
+                            class="h-12  min-[1024px]:h-[76px] rounded-md">
+                        <span id="thumbnail4"
+                            class="absolute  w-full h-full top-0 border-solid rounded-md hidden bg-[#dddddd99]"></span>
+                    </div>
+                </div>
+                <div class=" w-[110%] justify-between absolute top-[42%] sm:flex ">
+                    <img src="./assets/images/icon-previous.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
+                        onclick="lightboxPrevDisplay()">
+                    <img src="./assets/images/icon-next.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
+                        onclick="lightboxNextDisplay()">
+
+                </div>
+            </div>
+        </section>
+        <script>
+            const displayArray = ["./assets/images/image-product-1.jpg", "./assets/images/image-product-2.jpg", "./assets/images/image-product-3.jpg", "./assets/images/image-product-4.jpg"]
+
+            let cart = [];
+            let displayindex = 0
+            let numOfProduct = 0
+
+            const upCount = () => {
+                if (numOfProduct => 0) {
+                    console.log("up");
+                    document.getElementById("counter").value++;
+                    numOfProduct = document.getElementById("counter").value;
+                }
+            }
+
+            const downCount = () => {
+                if (numOfProduct > 0) {
+                    console.log("down");
+                    document.getElementById("counter").value--;
+                    numOfProduct = document.getElementById("counter").value;
+                }
+            }
+
+            const nextDisplay = () => {
+                if (displayindex < 3) {
+                    displayindex++;
+                    document.getElementById("display").setAttribute("src", displayArray[displayindex])
+
+                }
+            }
+
+            const prevDisplay = () => {
+                if (displayindex > 0) {
+                    displayindex--;
+                    document.getElementById("display").setAttribute("src", displayArray[displayindex]);
+
+                }
+            }
+
+            const lightboxNextDisplay = () => {
+                if (displayindex < 3) {
+                    displayindex++;
+                    document.getElementById("lightboxmain").setAttribute("src", displayArray[displayindex])
+                }
+                displayLightboxOverlay()
+            }
+
+            const lightboxPrevDisplay = () => {
+                if (displayindex > 0) {
+                    displayindex--;
+                    document.getElementById("lightboxmain").setAttribute("src", displayArray[displayindex])
+                }
+                displayLightboxOverlay()
+            }
+
+            const displayLightboxOverlay = () => {
+                if (displayindex === 3) {
+                    document.getElementById("thumbnail4").classList.remove("hidden");
+                    document.getElementById("thumbnail2").classList.add("hidden");
+                    document.getElementById("thumbnail3").classList.add("hidden");
+                    document.getElementById("thumbnail1").classList.add("hidden");
+                }
+                if (displayindex === 2) {
+                    document.getElementById("thumbnail3").classList.remove("hidden");
+                    document.getElementById("thumbnail2").classList.add("hidden");
+                    document.getElementById("thumbnail1").classList.add("hidden");
+                    document.getElementById("thumbnail4").classList.add("hidden");
+                }
+                if (displayindex === 1) {
+                    document.getElementById("thumbnail2").classList.remove("hidden");
+                    document.getElementById("thumbnail1").classList.add("hidden");
+                    document.getElementById("thumbnail3").classList.add("hidden");
+                    document.getElementById("thumbnail4").classList.add("hidden");
+                }
+                if (displayindex === 0) {
+                    document.getElementById("thumbnail1").classList.remove("hidden");
+                    document.getElementById("thumbnail2").classList.add("hidden");
+                    document.getElementById("thumbnail3").classList.add("hidden");
+                    document.getElementById("thumbnail4").classList.add("hidden");
+                }
+            }
+
+            const exitLightbox = () => {
+                document.getElementById("lightbox").classList.add("hidden")
+            }
+
+            const jumpTo = (no) => {
+                displayindex
+                if (no === 3) {
+                    document.getElementById("thumb0Overlay").classList.add("hidden")
+                    document.getElementById("thumb1Overlay").classList.add("hidden")
+                    document.getElementById("thumb2Overlay").classList.add("hidden")
+                    document.getElementById("thumb3Overlay").classList.remove("hidden")
+                }
+                if (no === 2) {
+                    document.getElementById("thumb0Overlay").classList.add("hidden")
+                    document.getElementById("thumb1Overlay").classList.add("hidden")
+                    document.getElementById("thumb2Overlay").classList.remove("hidden")
+                    document.getElementById("thumb3Overlay").classList.add("hidden")
+                }
+                if (no === 1) {
+                    document.getElementById("thumb0Overlay").classList.add("hidden")
+                    document.getElementById("thumb1Overlay").classList.remove("hidden")
+                    document.getElementById("thumb2Overlay").classList.add("hidden")
+                    document.getElementById("thumb3Overlay").classList.add("hidden")
+                }
+                if (no === 0) {
+                    document.getElementById("thumb0Overlay").classList.remove("hidden")
+                    document.getElementById("thumb1Overlay").classList.add("hidden")
+                    document.getElementById("thumb2Overlay").classList.add("hidden")
+                    document.getElementById("thumb3Overlay").classList.add("hidden")
+                }
+                displayindex = no;
+                document.getElementById("display").setAttribute("src", displayArray[displayindex])
+
+            }
+
+            const menu = () => {
+                document.getElementById("body").classList.add("overflow-hidden")
+                document.getElementById("overlay").classList.remove("hidden");
+                document.getElementById("dropmenu").classList.remove("hidden")
+
+
+            }
+
+            const closeMenu = () => {
+                document.getElementById("body").classList.remove("overflow-hidden")
+                document.getElementById("overlay").classList.add("hidden");
+                document.getElementById("dropmenu").classList.add("hidden")
+            }
+
+            const openCart = () => {
+                document.getElementById("body").classList.add("overflow-hidden")
+                document.getElementById("cartOverlay").classList.remove("hidden");
+                document.getElementById("cart").classList.remove("hidden")
+            }
+
+            const closeCart = () => {
+                document.getElementById("body").classList.remove("overflow-hidden")
+                document.getElementById("cartOverlay").classList.add("hidden");
+                document.getElementById("cart").classList.add("hidden")
+            }
+
+            const addTocart = () => {
+                quantity = document.getElementById("counter").value;
+                // console.log(quantity)
+                if (quantity > 0) {
+                    cart[0] = ["FallLES", quantity];
+                    console.log(cart[0][1])
+
+                    document.getElementById("counter").value = 0;
+                }
+                refreshCart();
+                quantity = 0;
+            }
+
+            const navBorder = (header) => {
+                if (header === "Collections") {
+                    document.getElementById("Collections").classList.remove("border-none");
+                    document.getElementById("Men").classList.add("border-none");
+                    document.getElementById("Women").classList.add("border-none");
+                    document.getElementById("Contact").classList.add("border-none");
+                    document.getElementById("About").classList.add("border-none");
+                }
+                if (header === "Men") {
+                    document.getElementById("Collections").classList.add("border-none");
+                    document.getElementById("Men").classList.remove("border-none");
+                    document.getElementById("Women").classList.add("border-none");
+                    document.getElementById("Contact").classList.add("border-none");
+                    document.getElementById("About").classList.add("border-none");
+                }
+                if (header === "Women") {
+                    document.getElementById("Collections").classList.add("border-none");
+                    document.getElementById("Men").classList.add("border-none");
+                    document.getElementById("Women").classList.remove("border-none");
+                    document.getElementById("Contact").classList.add("border-none");
+                    document.getElementById("About").classList.add("border-none");
+                }
+                if (header === "About") {
+                    document.getElementById("Collections").classList.add("border-none");
+                    document.getElementById("Men").classList.add("border-none");
+                    document.getElementById("Women").classList.add("border-none");
+                    document.getElementById("Contact").classList.add("border-none");
+                    document.getElementById("About").classList.remove("border-none");
+                }
+                if (header === "Contact") {
+                    document.getElementById("Collections").classList.add("border-none");
+                    document.getElementById("Men").classList.add("border-none");
+                    document.getElementById("Women").classList.add("border-none");
+                    document.getElementById("Contact").classList.remove("border-none");
+                    document.getElementById("About").classList.add("border-none");
+                }
+            }
+
+            const profileborder = () => {
+                document.getElementById("profileimg").classList.remove("border-none")
+            }
+
+
+            const refreshCart = () => {
+                console.log("refreshing");
+
+                if (cart.length > 0) {
+                    document.getElementById("emptycart").classList.add("hidden");
+                    document.getElementById("cartlist").classList.remove("hidden");
+
+                    document.getElementById("priceQuantity").innerText = `$125.00 x ${cart[0][1]}`;
+                    console.log(quantity);
+                    price = 125 * quantity;
+                    console.log(price);
+                    document.getElementById("totalPrice").innerText = `$${price}`;
+                    document.getElementById("cartbadge").classList.remove("hidden");
+
+                    document.getElementById("cartbadge").innerText = cart[0][1];
+
+                }
+                else {
+                    document.getElementById("emptycart").classList.remove("hidden");
+                    document.getElementById("cartlist").classList.add("hidden");
+                    document.getElementById("cartbadge").classList.add("hidden");
+
+                }
+
+
+            }
+
+            const deleteFromCart = () => {
+                console.log("deleteeee")
+                // if (quantity > 0) {
+                cart = [];
+                // document.getElementById("counter").value = 0;
+
+                refreshCart();
+                // quantity = 0;
+                // }  
+            }
+        </script>
+    </body>
+
+</html>

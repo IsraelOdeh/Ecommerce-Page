@@ -20,7 +20,7 @@ module.exports = {
         "n6" : "-6px"
       },
       fontFamily:{
-        'kumbh' : ["kumbh","sans-serif"]
+        'kumbh' : ["Kumbh Sans","sans-serif"]
       }
     },
   },

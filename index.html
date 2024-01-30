@@ -4,17 +4,23 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link href="https://fonts.google.com/specimen/Kumbh+Sans" rel="stylesheet"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon-32x32.png">
         <link rel="stylesheet" href="./dist/output.css">
         <title>Ecommerce</title>
     </head>
 
-    <body id="body" class="font-kumbh box-border pt-4 relative min-[906px]:px-8 min-[1440px]:px-[170px]">
-        <nav class="flex px-4 w-full justify-between  sm:pb-0 pb-4 align-middle">
+    <body id="body" class="font-kumbh box-border  relative  min-[1440px]:px-[170px]">
+        <nav
+            class="flex px-4 w-full justify-between  min-[768px]:pb-0 py-4 align-middle fixed h-[50px] min-[768px]:h-[65px] z-10 bg-cWhite left-0  max-w-[1053px]  right-0 ml-auto mr-auto min-[768px]:w-[90%] min-[768px]:border-solid border-b-cGrayishblue border-b-[1px]  ">
             <div class="flex">
-                <img src="./assets/images/icon-menu.svg" class="h-5 pr-2 sm:hidden" onclick="menu()">
+                <img src="./assets/images/icon-menu.svg" class="h-5 pr-2 min-[768px]:hidden" onclick="menu()">
                 <img src="./assets/images/logo.svg" class="h-5">
-                <ul class="sm:flex pl-8 gap-5 hidden">
+                <ul class="min-[768px]:flex pl-8 gap-5 hidden">
                     <li id="Collections" class="pb-5 border-cOrange border-b-4 border-solid "
                         onclick="navBorder('Collections')">Collections</li>
                     <li id="Men" class="pb-5 border-cOrange border-b-4 border-none" onclick="navBorder('Men')">Men</li>
@@ -28,12 +34,12 @@
             </div>
             <div class="flex">
                 <div class="relative" onclick="openCart()">
-                    <img src="./assets/images/icon-cart.svg" class="h-5 min-[768px]:h-8 ">
+                    <img src="./assets/images/icon-cart.svg" class="h-5 ">
                     <span id="cartbadge"
                         class="absolute top-n6 right-n4 bg-cOrange rounded-md text-center w-5 text-[9px] font-bold  hidden"></span>
                 </div>
                 <img id="profileimg" src="./assets/images/image-avatar.png"
-                    class="h-5 ml-4 max-[317px]:ml-0 min-[768px]:h-10 border-none border-cOrange border-2 rounded-full"
+                    class="h-6 ml-4 max-[317px]:ml-0  border-none border-cOrange border-2 rounded-full"
                     onclick="profileborder()">
             </div>
             <div id="dropmenu" class="fixed bg-cWhite z-10 left-0 top-0 w-2/3 h-full p-6 font-bold hidden">
@@ -52,17 +58,18 @@
             <div id="overlay" onclick="closeMenu()" class="w-1/3 right-0 top-0 fixed h-full bg-Overlay z-10 hidden">
             </div>
         </nav>
-        <div class="w-75 fixed top-16 bg-cWhite rounded-lg  right-2 max-[317px]:w-auto max-[317px]:right-0  z-30 hidden"
+
+        <div class="w-[95%] right-[2.5%] left-[2.5%] absolute top-16 bg-cWhite rounded-lg  max-[317px]:w-auto   z-30 hidden max-w-[357px] min-[378px]:left-auto"
             id="cart">
-            <div class="font-bold my-5  px-3">Cart</div>
-            <hr class="mb-3 mt-3">
+            <div class="font-bold my-5  px-5">Cart</div>
+            <hr class="mb-1 mt-3">
             <div class="text-cGrayishblue font-bold h-20 text-center  px-3 pt-5  " id="emptycart">
                 Your cart is empty.
             </div>
-            <div id="cartlist" class="hidden  px-3">
+            <div id="cartlist" class="hidden  px-5">
 
-                <div class="flex h-14 justify-between max-[317px]:h-auto  mb-10 mt-8 ">
-                    <img src="./assets/images/image-product-1-thumbnail.jpg" class="h-11">
+                <div class="flex h-14 justify-between max-[317px]:h-auto  mb-5 mt-4 ">
+                    <img src="./assets/images/image-product-1-thumbnail.jpg" class="h-[50px] rounded-md mr-[10px]">
                     <div class="">
                         <span class="block">Fall Limited Edition Sneakers</span>
                         <span class="" id="priceQuantity">
@@ -70,12 +77,13 @@
                         <span id="totalPrice" class="font-bold"></span>
 
                     </div>
-                    <img src="./assets/images/icon-delete.svg" class="h-4 self-center" onclick="deleteFromCart()">
+                    <img src="./assets/images/icon-delete.svg" class="h-4 self-center px-[10px]"
+                        onclick="deleteFromCart()">
                 </div>
                 <button
-                    class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center mb-11">Checkout</button>
+                    class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center mb-7">Checkout</button>
             </div>
-            <!-- <div class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 sm:basis-[40%] sm:px-1">
+            <!-- <div class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 min-[768px]:basis-[40%] min-[768px]:px-1">
                 <img src="./assets/images/icon-minus.svg" class="h-1 " onclick="downCount()">
                 <input id="counter" type="number" value="0" disabled
                     class="bg-cLightgrayishblue text-center w-full font-bold">
@@ -84,81 +92,85 @@
         </div>
         <div id="cartOverlay" onclick="closeCart()" class="w-full right-0 top-0 fixed h-full bg-Overlay z-10 hidden">
         </div>
-        <hr class="hidden sm:block mb-16">
-        <div class="sm:flex sm:gap-[6%] min-[1440px]:gap-[10%] sm:pl-[10%] sm:pr-[10%] min-[1440px]:px-11">
-            <hero class="relative sm:shrink-0 ">
+
+        <div
+            class="min-[768px]:flex min-[768px]:gap-[6%] min-[1440px]:gap-[10%] min-[768px]:pl-[10%] min-[768px]:pr-[10%]  mx-auto max-w-[1053px] min-[1440px]:px-11 pt-[10px] min-[768px]:pt-[100px]">
+            <hero class="relative min-[768px]:shrink-0  ">
                 <img id="display" src="./assets/images/image-product-1.jpg"
-                    class="sm:w-75 sm:rounded-xl min-[1440px]:w-[408px]">
-                <div class=" min-[1440px]:w-[408px] w-[305px] gap-[10px] hidden sm:flex sm:mt-3">
+                    class="min-[768px]:w-75 min-[768px]:rounded-xl min-[1440px]:w-[380px]" onclick="showLightbox()">
+                <div class=" min-[1440px]:w-[380px] w-[305px] gap-[10px] hidden min-[768px]:flex min-[768px]:mt-3">
                     <div class="relative">
                         <img src="./assets/images/image-product-1-thumbnail.jpg" class=" rounded-xl"
                             onclick="jumpTo(0)">
                         <span id="thumb0Overlay"
-                            class="absolute  w-full h-full top-0 border-solid rounded-xl  bg-[#dddddd99]"></span>
+                            class="absolute  w-full h-full top-0 rounded-xl  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
                     </div>
                     <div class="relative">
                         <img src="./assets/images/image-product-2-thumbnail.jpg" class=" rounded-xl"
                             onclick="jumpTo(1)">
                         <span id="thumb1Overlay"
-                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden  bg-[#dddddd99]"></span>
+                            class="absolute  w-full h-full top-0  rounded-xl hidden  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
 
                     </div>
                     <div class="relative">
                         <img src="./assets/images/image-product-3-thumbnail.jpg" class=" rounded-xl"
                             onclick="jumpTo(2)">
                         <span id="thumb2Overlay"
-                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden bg-[#dddddd99]"></span>
+                            class="absolute  w-full h-full top-0 rounded-xl hidden bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
 
                     </div>
                     <div class="relative">
                         <img src="./assets/images/image-product-4-thumbnail.jpg" class=" rounded-xl"
                             onclick="jumpTo(3)">
                         <span id="thumb3Overlay"
-                            class="absolute  w-full h-full top-0 border-solid rounded-xl hidden  bg-[#dddddd99]"></span>
+                            class="absolute  w-full h-full top-0  rounded-xl hidden  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
 
                     </div>
 
                 </div>
-                <div class="flex w-full justify-between absolute top-1/2 px-4 sm:hidden">
-                    <img src="./assets/images/icon-previous.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
-                        onclick="prevDisplay()">
-                    <img src="./assets/images/icon-next.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
-                        onclick="nextDisplay()">
+                <div class="flex w-full justify-between absolute top-1/2 px-4 min-[768px]:hidden ">
+                    <div class="bg-cWhite rounded-full w-9 h-9  flex justify-around items-center">
+                        <img src="./assets/images/icon-previous.svg" onclick="prevDisplay()" class="h-[13px] w-[13px]">
+                    </div>
+                    <div class="bg-cWhite rounded-full w-9 h-9 flex justify-around items-center">
+                        <img src="./assets/images/icon-next.svg" onclick="nextDisplay()" class="h-[13px] w-[13px]">
+                    </div>
 
                 </div>
             </hero>
 
-            <section class="px-4 pt-10">
+            <section class="px-4 pt-[40px] min-[768px]:pt-0 min-[950px]:pt-[40px]">
 
-                <span class="block text-cOrange uppercase font-bold pb-3"> Sneaker Company</span>
-                <span
-                    class="block font-bold text-2xl min-[894px]:text-3xl min-[894px]:leading-none min-[1440px]:pb-9 min-[1440px]:text-4xl">
+                <span class="block text-cOrange uppercase font-bold pb-3 text-[13ox]"> Sneaker Company</span>
+                <span class="block font-bold text-[28px]  min-[1440px]:pb-5 min-[1440px]:text-4xl leading-none">
                     Fall Limited Edition Sneakers</span>
-                <span class="block text-cDarkgrayishblue text-sm pb-4 min-[1440px]:text-base">
+                <span class="block text-cDarkgrayishblue font-normal text-[16px] py-4 min-[1440px]:text-base">
                     These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer
                     sole, they'll withstand everything the weather can offer.
 
                 </span>
-                <div class="relative items-center pb-4 flex sm:block">
-                    <div>
+                <div class="relative items-center pb-4 flex min-[768px]:block">
+                    <div class="flex">
                         <span class="font-extrabold text-2xl mr-2">
                             $125.00
                         </span>
-                        <span class="bg-cPaleorange text-cOrange rounded-lg px-2 font-bold">50%</span>
+                        <span class="bg-cPaleorange text-cOrange rounded-lg px-2 font-bold h-fit self-center">50%</span>
                     </div>
-                    <span class="sm:block right-0 absolute text-cDarkgrayishblue font-bold sm:relative sm:pt-2"> <del>
+                    <span
+                        class="min-[768px]:block right-0 absolute text-cDarkgrayishblue font-bold min-[768px]:relative min-[768px]:pt-2">
+                        <del>
                             $250.00 </del></span>
                 </div>
-                <div class="sm:flex sm:gap-2">
+                <div class="min-[768px]:flex min-[768px]:gap-2">
                     <div
-                        class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 sm:basis-[40%] sm:px-1">
+                        class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 min-[768px]:basis-[60%] min-[768px]:px-1">
                         <img src="./assets/images/icon-minus.svg" class="h-1 " onclick="downCount()">
                         <input id="counter" type="number" value="0" disabled
                             class="bg-cLightgrayishblue text-center w-full font-bold">
                         <img src="./assets/images/icon-plus.svg" class="h-3 " onclick="upCount()">
                     </div>
                     <button
-                        class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center shadow-2xl shadow-cPaleorange mb-6 sm:p-0"
+                        class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center shadow-2xl shadow-cPaleorange mb-6 min-[768px]:p-0"
                         onclick="addTocart()">
                         <div class="flex">
                             <img src="./assets/images/icon-cart.svg" class="pr-3"> Add to cart
@@ -174,40 +186,36 @@
 
 
         </div>
-        <section id="lightbox" class="w-full right-0 top-0 left-0 bottom-0 fixed h-full flex justify-center">
+        <section id="lightbox"
+            class="max-[768px]:hidden hidden z-10 w-full right-0 top-0 left-0 bottom-0 fixed h-full  justify-center">
             <span class="w-full right-0 top-0 left-0 bottom-0 fixed h-full bg-Overlay  flex justify-center z-20"
                 onclick="exitLightbox()"></span>
             <div class="flex flex-col items-center mt-20 relative z-30 h-fit">
                 <img src="./assets/images/icon-close.svg" class="self-end">
-                <img id="lightboxmain" src="./assets/images/image-product-1.jpg"
-                    class="h-64 rounded-xl min-[1024px]:h-[340px]">
+                <img id="lightboxmain" src="./assets/images/image-product-1.jpg" class="h-64 rounded-xl ">
                 <div class="flex gap-3 mt-3">
                     <div class="relative">
-                        <img src="./assets/images/image-product-1-thumbnail.jpg"
-                            class="h-12 min-[1024px]:h-[76px]  rounded-md">
+                        <img src="./assets/images/image-product-1-thumbnail.jpg" class="h-12   rounded-md">
                         <span id="thumbnail1"
                             class="absolute  w-full h-full top-0 border-solid rounded-md  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-2-thumbnail.jpg"
-                            class="h-12  min-[1024px]:h-[76px] rounded-md">
+                        <img src="./assets/images/image-product-2-thumbnail.jpg" class="h-12   rounded-md">
                         <span id="thumbnail2"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-3-thumbnail.jpg"
-                            class="h-12 min-[1024px]:h-[76px]  rounded-md">
+                        <img src="./assets/images/image-product-3-thumbnail.jpg" class="h-12   rounded-md">
                         <span id="thumbnail3"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-4-thumbnail.jpg"
-                            class="h-12  min-[1024px]:h-[76px] rounded-md">
+                        <img src="./assets/images/image-product-4-thumbnail.jpg" class="h-12   rounded-md">
                         <span id="thumbnail4"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden bg-[#dddddd99]"></span>
                     </div>
                 </div>
-                <div class=" w-[110%] justify-between absolute top-[42%] sm:flex ">
+                <div class=" w-[110%] justify-between absolute top-[42%] min-[768px]:flex ">
                     <img src="./assets/images/icon-previous.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
                         onclick="lightboxPrevDisplay()">
                     <img src="./assets/images/icon-next.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
@@ -253,6 +261,11 @@
                     document.getElementById("display").setAttribute("src", displayArray[displayindex]);
 
                 }
+            }
+
+            const showLightbox = () => {
+                document.getElementById("lightbox").classList.remove("hidden");
+                document.getElementById("lightbox").classList.add("flex");
             }
 
             const lightboxNextDisplay = () => {
@@ -350,7 +363,8 @@
             const openCart = () => {
                 document.getElementById("body").classList.add("overflow-hidden")
                 document.getElementById("cartOverlay").classList.remove("hidden");
-                document.getElementById("cart").classList.remove("hidden")
+                document.getElementById("cart").classList.remove("hidden");
+                window.scrollTo(0, 0);
             }
 
             const closeCart = () => {

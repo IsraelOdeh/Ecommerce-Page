@@ -14,32 +14,36 @@
         <title>Ecommerce</title>
     </head>
 
-    <body id="body" class="font-kumbh box-border  relative  min-[1440px]:px-[170px]">
+    <body id="body" class="font-kumbh box-border  relative  cursor-default min-[1440px]:px-[170px]">
         <nav
             class="flex px-4 w-full justify-between  min-[768px]:pb-0 py-4 align-middle fixed h-[50px] min-[768px]:h-[65px] z-10 bg-cWhite left-0  max-w-[1053px]  right-0 ml-auto mr-auto min-[768px]:w-[90%] min-[768px]:border-solid border-b-cGrayishblue border-b-[1px]  ">
             <div class="flex">
                 <img src="./assets/images/icon-menu.svg" class="h-5 pr-2 min-[768px]:hidden" onclick="menu()">
                 <img src="./assets/images/logo.svg" class="h-5">
                 <ul class="min-[768px]:flex pl-8 gap-5 hidden">
-                    <li id="Collections" class="pb-5 border-cOrange border-b-4 border-solid "
+                    <li id="Collections" class="pb-5 border-cOrange border-b-4 border-solid  cursor-pointer"
                         onclick="navBorder('Collections')">Collections</li>
-                    <li id="Men" class="pb-5 border-cOrange border-b-4 border-none" onclick="navBorder('Men')">Men</li>
-                    <li id="Women" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('Women')">
+                    <li id="Men" class="pb-5 border-cOrange border-b-4 border-none cursor-pointer"
+                        onclick="navBorder('Men')">Men</li>
+                    <li id="Women" class="pb-5 border-cOrange border-b-4 border-none cursor-pointer"
+                        onclick="navBorder('Women')">
                         Women</li>
-                    <li id="About" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('About')">
+                    <li id="About" class="pb-5 border-cOrange border-b-4 border-none cursor-pointer"
+                        onclick="navBorder('About')">
                         About</li>
-                    <li id="Contact" class="pb-5 border-cOrange border-b-4 border-none " onclick="navBorder('Contact')">
+                    <li id="Contact" class="pb-5 border-cOrange border-b-4 border-none cursor-pointer"
+                        onclick="navBorder('Contact')">
                         Contact</li>
                 </ul>
             </div>
             <div class="flex">
                 <div class="relative" onclick="openCart()">
-                    <img src="./assets/images/icon-cart.svg" class="h-5 ">
+                    <img src="./assets/images/icon-cart.svg" class="h-5  cursor-pointer">
                     <span id="cartbadge"
                         class="absolute top-n6 right-n4 bg-cOrange rounded-md text-center w-5 text-[9px] font-bold  hidden"></span>
                 </div>
                 <img id="profileimg" src="./assets/images/image-avatar.png"
-                    class="h-6 ml-4 max-[317px]:ml-0  border-none border-cOrange border-2 rounded-full"
+                    class="h-7 ml-4 max-[317px]:ml-0  border-none border-cOrange border-2 rounded-full cursor-pointer"
                     onclick="profileborder()">
             </div>
             <div id="dropmenu" class="fixed bg-cWhite z-10 left-0 top-0 w-2/3 h-full p-6 font-bold hidden">
@@ -97,30 +101,31 @@
             class="min-[768px]:flex min-[768px]:gap-[6%] min-[1440px]:gap-[10%] min-[768px]:pl-[10%] min-[768px]:pr-[10%]  mx-auto max-w-[1053px] min-[1440px]:px-11 pt-[10px] min-[768px]:pt-[100px]">
             <hero class="relative min-[768px]:shrink-0  ">
                 <img id="display" src="./assets/images/image-product-1.jpg" alt="Sneaker display Image"
-                    class="min-[768px]:w-75 min-[768px]:rounded-xl min-[1440px]:w-[380px]" onclick="showLightbox()">
+                    class="min-[768px]:w-75 min-[768px]:rounded-xl min-[1440px]:w-[380px] cursor-pointer"
+                    onclick="showLightbox()">
                 <div class=" min-[1440px]:w-[380px] w-[305px] gap-[10px] hidden min-[768px]:flex min-[768px]:mt-3">
                     <div class="relative">
-                        <img src="./assets/images/image-product-1-thumbnail.jpg" class=" rounded-xl"
+                        <img src="./assets/images/image-product-1-thumbnail.jpg" class=" rounded-xl cursor-pointer"
                             onclick="jumpTo(0)">
                         <span id="thumb0Overlay"
                             class="absolute  w-full h-full top-0 rounded-xl  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-2-thumbnail.jpg" class=" rounded-xl"
+                        <img src="./assets/images/image-product-2-thumbnail.jpg" class=" rounded-xl cursor-pointer"
                             onclick="jumpTo(1)">
                         <span id="thumb1Overlay"
                             class="absolute  w-full h-full top-0  rounded-xl hidden  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
 
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-3-thumbnail.jpg" class=" rounded-xl"
+                        <img src="./assets/images/image-product-3-thumbnail.jpg" class=" rounded-xl cursor-pointer"
                             onclick="jumpTo(2)">
                         <span id="thumb2Overlay"
                             class="absolute  w-full h-full top-0 rounded-xl hidden bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
 
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-4-thumbnail.jpg" class=" rounded-xl"
+                        <img src="./assets/images/image-product-4-thumbnail.jpg" class=" rounded-xl cursor-pointer"
                             onclick="jumpTo(3)">
                         <span id="thumb3Overlay"
                             class="absolute  w-full h-full top-0  rounded-xl hidden  bg-[#dddddd99] border-solid border-cOrange border-[1px]"></span>
@@ -164,10 +169,10 @@
                 <div class="min-[768px]:flex min-[768px]:gap-2">
                     <div
                         class="flex w-full bg-cLightgrayishblue items-center h-12 rounded-xl px-6 mb-4 min-[768px]:basis-[60%] min-[768px]:px-1">
-                        <img src="./assets/images/icon-minus.svg" class="h-1 " onclick="downCount()">
+                        <img src="./assets/images/icon-minus.svg" class="h-1 cursor-pointer" onclick="downCount()">
                         <input id="counter" type="number" value="0" disabled
                             class="bg-cLightgrayishblue text-center w-full font-bold">
-                        <img src="./assets/images/icon-plus.svg" class="h-3 " onclick="upCount()">
+                        <img src="./assets/images/icon-plus.svg" class="h-3 cursor-pointer" onclick="upCount()">
                     </div>
                     <button
                         class="bg-cOrange flex text-cWhite text-center w-full justify-around  h-12 rounded-xl px-6 items-center shadow-2xl shadow-cPaleorange mb-6 min-[768px]:p-0"

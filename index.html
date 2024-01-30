@@ -96,7 +96,7 @@
         <div
             class="min-[768px]:flex min-[768px]:gap-[6%] min-[1440px]:gap-[10%] min-[768px]:pl-[10%] min-[768px]:pr-[10%]  mx-auto max-w-[1053px] min-[1440px]:px-11 pt-[10px] min-[768px]:pt-[100px]">
             <hero class="relative min-[768px]:shrink-0  ">
-                <img id="display" src="./assets/images/image-product-1.jpg"
+                <img id="display" src="./assets/images/image-product-1.jpg" alt="Sneaker display Image"
                     class="min-[768px]:w-75 min-[768px]:rounded-xl min-[1440px]:w-[380px]" onclick="showLightbox()">
                 <div class=" min-[1440px]:w-[380px] w-[305px] gap-[10px] hidden min-[768px]:flex min-[768px]:mt-3">
                     <div class="relative">
@@ -191,35 +191,41 @@
             <span class="w-full right-0 top-0 left-0 bottom-0 fixed h-full bg-Overlay  flex justify-center z-20"
                 onclick="exitLightbox()"></span>
             <div class="flex flex-col items-center mt-20 relative z-30 h-fit">
-                <img src="./assets/images/icon-close.svg" class="self-end">
-                <img id="lightboxmain" src="./assets/images/image-product-1.jpg" class="h-64 rounded-xl ">
+                <img src="./assets/images/icon-close.svg" alt="close icon" class="self-end">
+                <img id="lightboxmain" src="./assets/images/image-product-1.jpg" alt="Sneaker Image"
+                    class="h-64 rounded-xl ">
                 <div class="flex gap-3 mt-3">
                     <div class="relative">
-                        <img src="./assets/images/image-product-1-thumbnail.jpg" class="h-12   rounded-md">
+                        <img src="./assets/images/image-product-1-thumbnail.jpg" alt="sneaker thumbnail"
+                            class="h-12   rounded-md">
                         <span id="thumbnail1"
                             class="absolute  w-full h-full top-0 border-solid rounded-md  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-2-thumbnail.jpg" class="h-12   rounded-md">
+                        <img src="./assets/images/image-product-2-thumbnail.jpg" alt="sneaker thumbnail"
+                            class="h-12   rounded-md">
                         <span id="thumbnail2"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-3-thumbnail.jpg" class="h-12   rounded-md">
+                        <img src="./assets/images/image-product-3-thumbnail.jpg" alt="sneaker thumbnail"
+                            class="h-12   rounded-md">
                         <span id="thumbnail3"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden  bg-[#dddddd99]"></span>
                     </div>
                     <div class="relative">
-                        <img src="./assets/images/image-product-4-thumbnail.jpg" class="h-12   rounded-md">
+                        <img src="./assets/images/image-product-4-thumbnail.jpg" alt="sneaker thumbnail"
+                            class="h-12 rounded-md">
                         <span id="thumbnail4"
                             class="absolute  w-full h-full top-0 border-solid rounded-md hidden bg-[#dddddd99]"></span>
                     </div>
                 </div>
                 <div class=" w-[110%] justify-between absolute top-[42%] min-[768px]:flex ">
-                    <img src="./assets/images/icon-previous.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
-                        onclick="lightboxPrevDisplay()">
-                    <img src="./assets/images/icon-next.svg" class="bg-cWhite rounded-full w-8 h-8 p-2"
+                    <img src="./assets/images/icon-previous.svg" alt="previous icon"
+                        class="bg-cWhite rounded-full w-8 h-8 p-2" onclick="lightboxPrevDisplay()">
+                    <img src="./assets/images/icon-next.svg" alt="next icon" class="bg-cWhite rounded-full w-8 h-8 p-2"
                         onclick="lightboxNextDisplay()">
+
 
                 </div>
             </div>
